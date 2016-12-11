@@ -103,7 +103,7 @@ public class ShareClient {
             "applicationId": dexcomApplicationId
         ]
 
-        guard let url = URL(string: dexcomServerUS + dexcomLoginPath) else {
+        guard let url = URL(string: dexcomServerNonUS + dexcomLoginPath) else {
             return callback(ShareError.fetchError, nil)
         }
 
@@ -136,7 +136,7 @@ public class ShareClient {
                 return callback(error, nil)
             }
 
-            guard var components = URLComponents(string: dexcomServerUS + dexcomLatestGlucosePath) else {
+            guard var components = URLComponents(string: dexcomServerNonUS + dexcomLatestGlucosePath) else {
                 return callback(.fetchError, nil)
             }
 
